@@ -1,0 +1,28 @@
+version: "3"
+services:
+  jupyter: 
+    image: jdco/analytics:latest 
+    user: root
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+      - ~/.aws/:/home/jovyan/.aws
+    environment:
+      - AWS_SHARED_CREDENTIALS_FILE=/home/jovyan/.aws/credentials
+      - AWS_CONFIG_FILE=/home/jovyan/.aws/config
+      - GRANT_SUDO=yes
+    user: jovyan
+
+  db:
+    image: mongo 
+    volumes:
+      - ./mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+        #tensorflow:
+        #image: tensorflow/tensorflow
+        #ports:
+        #- "8889:8889"
+
