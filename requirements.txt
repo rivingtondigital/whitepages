@@ -61,7 +61,7 @@ plotly==4.4.1
 prometheus-client==0.7.1
 prompt-toolkit==2.0.10
 ptyprocess==0.6.0
-Pygments==2.5.2
+Pygments==2.7.4
 PyQt5==5.12.3
 PyQt5-sip==4.19.18
 PyQtWebEngine==5.12.1
